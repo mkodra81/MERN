@@ -1,0 +1,12 @@
+footer {
+  background-color: #1a1a1a;
+}
+
+.social-icons .nav-link {
+  margin-right: 15px;
+  font-size: 1.5rem;
+}
+
+.social-icons .nav-link:hover {
+  color: #007bff;
+}

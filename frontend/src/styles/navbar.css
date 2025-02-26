@@ -1,0 +1,23 @@
+.dropdown-transparent {
+  background-color: transparent !important;
+  border: none !important;
+  color: white !important; /* Ensure text remains visible */
+}
+
+.dropdown-items-scrolled {
+  background-color: #1a1a1a!important; /* Example dark semi-transparent bg */
+  color: white !important;
+}
+
+/* Ensure dropdown menu also follows transparency */
+.navbar .dropdown-menu {
+  background-color: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+}
+
+.dropdown-item:nth-last-child(1){
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding-bottom: 8px;
+}

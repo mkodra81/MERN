@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #141414;
+  color: #fff;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+nav {
+  font-size: 1.2rem
+}
+
+
+@media (max-width: 576px) {
+  * {
+    font-size: 0.9rem; 
+  }
+
+  .container-fluid {
+    padding: 0 10px; /* Add small padding on XS screens */
+  }
+
+}

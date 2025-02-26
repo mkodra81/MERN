@@ -1,0 +1,27 @@
+.card-img-top {
+  width: 100%;
+  height: 25vw;
+  object-fit: cover;
+}
+
+.glass-background {
+  background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+  backdrop-filter: blur(10px); /* Blurs the background */
+  border-radius: 50px; /* Optional: for rounded corners */
+  padding: 5px; /* Adjust padding as needed */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: for subtle shadow */
+}
+
+
+@media screen and (max-width: 576px) {
+  .card {
+    max-height: 100vw;
+  }
+  .card-img-top {
+    height: 50vw;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+}

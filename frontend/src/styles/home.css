@@ -1,0 +1,10 @@
+.hover-scale {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.hover-scale:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.carousel-container {
+  padding: 20px 0;
+}
