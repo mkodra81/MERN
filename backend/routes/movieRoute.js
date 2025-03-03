@@ -5,7 +5,7 @@ const movieRouter = express.Router();
 
 //Read
 movieRouter.get("/sort-by", async (req, res) => {
-  const sortField = req.query.s || "imdb.rating"; // Default sorting field
+  const sortField = req.query.s || "imdb.rating"; 
 
   console.log(`Sorting by: ${sortField}`);
 
@@ -17,7 +17,8 @@ movieRouter.get("/sort-by", async (req, res) => {
           "imdb.rating": { $ne: "" },
           year: { $type: "number" },
           directors: { $ne: null },
-          genres: { $ne: null}
+          genres: { $ne: null},
+          fullplot: { $ne: null},
         },
       },
       {

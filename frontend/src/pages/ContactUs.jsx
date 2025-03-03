@@ -1,9 +1,11 @@
+import { set } from "mongoose";
 import React, { useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     email: "",
+    subject: "",
     message: "",
   });
 
@@ -14,8 +16,12 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
+    alert("Thank you for contacing us. We will get back at you as soon as possible.")
+    setFormData({
+      email: "",
+      subject: "",
+      message: "",
+    })
   };
 
   return (

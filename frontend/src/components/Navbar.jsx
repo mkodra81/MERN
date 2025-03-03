@@ -19,14 +19,14 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  
-
   return (
     <Navbar
       expand="lg"
       fixed="top"
       className={`transition-all duration-500 fs-4 ${
-        isScrolled ? "bg-dark" : "bg-transparent"
+        isScrolled
+          ? "dropdown-items-scrolled"
+          : "dropdown-transparent"
       }`}
       variant="dark"
     >
@@ -89,14 +89,15 @@ const Navigation = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              <NavDropdown title="User Options" id="basic-nav-dropdown">
+              <NavDropdown title="Guest" id="basic-nav-dropdown"> 
+
                 <NavDropdown.Item
                   as={Link}
                   to="/login"
                   className={
                     isScrolled
-                      ? "bg-transparent text-white"
-                      : "dropdown-items-scrolled"
+                      ? "dropdown-items-scrolled"
+                      : "dropdown-transparent"
                   }
                 >
                   Login
@@ -106,8 +107,8 @@ const Navigation = () => {
                   to="/signup"
                   className={
                     isScrolled
-                      ? "bg-transparent text-white"
-                      : "dropdown-items-scrolled"
+                      ? "dropdown-items-scrolled"
+                      : "dropdown-transparent"
                   }
                 >
                   Sign Up

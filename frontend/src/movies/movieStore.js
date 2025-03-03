@@ -2,7 +2,7 @@ import { create } from "zustand";
 import axios from "axios";
 
 export const useMovieStore = create((set) => ({
-  selectedMovie: (JSON.parse(localStorage.getItem("selectedMovie"))) || null,
+  selectedMovie:  null,
   trendingMovies: [],
   newReleases: [],
   suggestedMovies: [],

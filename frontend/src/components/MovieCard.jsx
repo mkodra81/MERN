@@ -24,7 +24,7 @@ const MovieCard = ({ movie }) => {
         </Badge>
       </div>
       <Card.Body>
-        <Card.Title className="h5 mb-2">{movie.title}</Card.Title>
+        <Card.Title className="mb-2">{movie.title}</Card.Title>
         <div className="d-flex justify-content-between align-items-center">
 
           <span className="text-muted small">{movie.year}</span>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,7 +13,9 @@ const Hero = () => {
   const setWatchMovie = useMovieStore((state) => state.setWatchMovie);
 
   const movie = movies[random];
-  setSelectedMovie(movie);
+  useEffect(() => {
+    setSelectedMovie(movie);
+  }, [movie, setSelectedMovie]);
 
   const plot =
     movie.fullplot.length > 500
@@ -42,7 +44,10 @@ const Hero = () => {
             <h1 className="display-4 fw-bold mb-3">{movie.title}</h1>
             <p className="lead mb-4 w-75 d-none d-sm-block">{plot}</p>
             <div className="d-flex gap-3">
-              <Link to={`/movie/${movie._id}`} onClick={() => setWatchMovie(true)}>
+              <Link
+                to={`/movie/${movie._id}`}
+                onClick={() => setWatchMovie(true)}
+              >
                 <Button variant="primary" size="lg">
                   <FontAwesomeIcon icon={faPlay} className="me-2" />
                   Watch Now
