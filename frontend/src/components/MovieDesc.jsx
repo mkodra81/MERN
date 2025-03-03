@@ -20,7 +20,6 @@ const MovieDesc = ({ movie }) => {
   return (
     <Container className="py-5 mt-5 lg-bg-transparent w-100 h-100"> 
     <Row className="h-100 w-100"> 
-      {/* Poster Image Column */}
       <Col className="d-none d-sm-block mx-5" xl={4}>
         <img
           style={{ maxHeight: "90vh", width: "auto" }}

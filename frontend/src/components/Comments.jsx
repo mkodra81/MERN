@@ -91,7 +91,7 @@ const Comments = ({ movieId, user }) => {
                 <div className="mt-3 d-flex align-items-center">
                   <div>{c.text}</div>
                   <div className="ms-auto float-end">
-                    {(user === null || user.email === c.email ) && (
+                    {user !== null ? (user.email === c.email ) && (
                       <>
                         <Button
                           variant="link"
@@ -106,9 +106,9 @@ const Comments = ({ movieId, user }) => {
                           onClick={() => handleEdit(c._id, c.text)}
                         >
                           Edit
-                        </Button>{" "}
+                        </Button>
                       </>
-                    )}
+                    ) : null}
                   </div>
                 </div>
               </ListGroup.Item>

@@ -25,6 +25,12 @@ const Home = () => {
   const setNewReleases = useMovieStore((state) => state.setNewReleases);
 
   useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }, 200);
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
       setLoading(true); // Set loading state to true before fetching
 
@@ -52,7 +58,6 @@ const Home = () => {
     { id: 4, name: "Sci-Fi", icon: faRocket, movieCount: 123 },
     { id: 5, name: "Romance", icon: faHeart, movieCount: 145 },
     { id: 6, name: "Horror", icon: faGhost, movieCount: 98 },
-    { id: 7, name: "Fantasy", icon: faDragon, movieCount: 167 },
   ];
 
   return loading ? (
