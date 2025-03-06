@@ -17,7 +17,9 @@ const handleSubmit = (e) => {
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white py-4">
+    <footer className="text-white py-4" style={{
+      backgroundColor: "#1a1a1a"
+    }}>
       <Container>
         <Row>
           <Col md={4}>

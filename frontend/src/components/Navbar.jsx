@@ -19,31 +19,33 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavItemClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Navbar
       expand="lg"
       fixed="top"
       className={`transition-all duration-500 fs-4 ${
-        isScrolled
-          ? "dropdown-items-scrolled"
-          : "dropdown-transparent"
+        isScrolled ? "dropdown-items-scrolled" : "dropdown-transparent"
       }`}
       variant="dark"
     >
       <Container fluid className="px-4">
-        <Link to="/" className="nav-link text-white fw-bold">
+        <Link to="/" className="nav-link text-white fw-bold" onClick={handleNavItemClick}>
           MovieStream
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end w-100">
-            <Link to="/" className="nav-link text-white">
+            <Link to="/" className="nav-link text-white" onClick={handleNavItemClick}>
               Home
             </Link>
-            <Link to="/about" className="nav-link text-white">
+            <Link to="/about" className="nav-link text-white" onClick={handleNavItemClick}>
               About
             </Link>
-            <Link to="/contact-us" className="nav-link text-white">
+            <Link to="/contact-us" className="nav-link text-white" onClick={handleNavItemClick}>
               Contact Us
             </Link>
 
@@ -61,6 +63,7 @@ const Navigation = () => {
                       ? "dropdown-items-scrolled"
                       : "dropdown-transparent"
                   }
+                  onClick={handleNavItemClick}
                 >
                   Login with <br /> another account
                 </NavDropdown.Item>
@@ -72,13 +75,17 @@ const Navigation = () => {
                       ? "dropdown-items-scrolled"
                       : "dropdown-transparent"
                   }
+                  onClick={handleNavItemClick}
                 >
                   Create another <br /> account
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={Link}
                   to="/"
-                  onClick={logout}
+                  onClick={() => {
+                    logout();
+                    handleNavItemClick();
+                  }}
                   className={
                     isScrolled
                       ? "dropdown-items-scrolled"
@@ -89,8 +96,7 @@ const Navigation = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              <NavDropdown title="Guest" id="basic-nav-dropdown"> 
-
+              <NavDropdown title="Guest" id="basic-nav-dropdown">
                 <NavDropdown.Item
                   as={Link}
                   to="/login"
@@ -99,6 +105,7 @@ const Navigation = () => {
                       ? "dropdown-items-scrolled"
                       : "dropdown-transparent"
                   }
+                  onClick={handleNavItemClick}
                 >
                   Login
                 </NavDropdown.Item>
@@ -110,6 +117,7 @@ const Navigation = () => {
                       ? "dropdown-items-scrolled"
                       : "dropdown-transparent"
                   }
+                  onClick={handleNavItemClick}
                 >
                   Sign Up
                 </NavDropdown.Item>

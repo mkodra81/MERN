@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { Container, Form, Button, ListGroup } from "react-bootstrap";
 import { useUserStore } from "../movies/userStore.js";
 import "../styles/comments.css";
@@ -12,7 +12,7 @@ const Comments = ({ movieId, user }) => {
   const addComment = useUserStore((state) => state.addComment);
   const deleteComment = useUserStore((state) => state.deleteComment);
   const updateComment = useUserStore((state) => state.updateComment);
- 
+
   useEffect(() => {
     fetchComments(movieId);
   }, [fetchComments, movieId]);
@@ -62,9 +62,10 @@ const Comments = ({ movieId, user }) => {
         </Form>
       ) : (
         <Link to="/login">
-        <Button variant="secondary" className="mt-2">
-          Login to Comment
-        </Button></Link>
+          <Button variant="secondary" className="mt-2">
+            Login to Comment
+          </Button>
+        </Link>
       )}
       <ListGroup className="mt-3">
         {Array.isArray(comments)
@@ -91,24 +92,26 @@ const Comments = ({ movieId, user }) => {
                 <div className="mt-3 d-flex align-items-center">
                   <div>{c.text}</div>
                   <div className="ms-auto float-end">
-                    {user !== null ? (user.email === c.email ) && (
-                      <>
-                        <Button
-                          variant="link"
-                          size="sm"
-                          onClick={() => handleDelete(c._id)}
-                        >
-                          Delete
-                        </Button>
-                        <Button
-                          variant="link"
-                          size="sm"
-                          onClick={() => handleEdit(c._id, c.text)}
-                        >
-                          Edit
-                        </Button>
-                      </>
-                    ) : null}
+                    {user !== null
+                      ? user.email === c.email && (
+                          <>
+                            <Button
+                              variant="link"
+                              size="sm"
+                              onClick={() => handleEdit(c._id, c.text)}
+                            >
+                              Edit
+                            </Button>
+                            <Button
+                              variant="danger"
+                              size="sm"
+                              onClick={() => handleDelete(c._id)}
+                            >
+                              Delete
+                            </Button>
+                          </>
+                        )
+                      : null}
                   </div>
                 </div>
               </ListGroup.Item>
