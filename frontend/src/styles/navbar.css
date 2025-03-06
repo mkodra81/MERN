@@ -1,15 +1,14 @@
 .dropdown-transparent {
   background-color: transparent !important;
   border: none !important;
-  color: white !important; /* Ensure text remains visible */
+  color: white !important; 
 }
 
 .dropdown-items-scrolled {
-  background-color: #1a1a1a!important; /* Example dark semi-transparent bg */
+  background-color: #1a1a1a!important; 
   color: white !important;
 }
 
-/* Ensure dropdown menu also follows transparency */
 .navbar .dropdown-menu {
   background-color: transparent !important;
   border: none !important;
