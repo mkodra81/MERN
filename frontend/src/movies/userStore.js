@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:3000/api/users";
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}/api/users`;
 
 export const useUserStore = create((set) => ({
   users: [],

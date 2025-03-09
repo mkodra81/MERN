@@ -22,7 +22,7 @@ export const useMovieStore = create((set) => ({
 export const fetchMoviesBySorting = async (sort) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/movies/sort-by?s=${sort}`
+      `${import.meta.env.VITE_API_URL}/api/movies/sort-by?s=${sort}`
     );
     return response.data;
   } catch (error) {
@@ -34,7 +34,7 @@ export const fetchMoviesBySorting = async (sort) => {
 export const fetchMoviesByFilter = async (filter) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/movies/filter-by?f=${filter}`
+      `${import.meta.env.VITE_API_URL}/api/movies/filter-by?f=${filter}`
     );
     return response.data;
   } catch (error) {
