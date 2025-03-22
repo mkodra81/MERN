@@ -7,8 +7,6 @@ const movieRouter = express.Router();
 movieRouter.get("/sort-by", async (req, res) => {
   const sortField = req.query.s || "imdb.rating"; 
 
-  console.log(`Sorting by: ${sortField}`);
-
   try {
     const movies = await Movie.aggregate([
       {
