@@ -8,15 +8,10 @@ import userRouter from "./routes/userRoute.js";
 dotenv.config();
 
 const app = express();
-
 const PORT = process.env.PORT;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
 app.use(express.json()); 
-app.use(cors());
+app.use(cors()); // to allow cross-origin requests
 
 app.use("/api/movies", movieRouter);
 app.use("/api/users", userRouter);
