@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+console.log("API_URL", API_URL);  
 export const useMovieStore = create((set) => ({
   selectedMovie:  null,
   trendingMovies: [],
@@ -22,7 +24,7 @@ export const useMovieStore = create((set) => ({
 export const fetchMoviesBySorting = async (sort) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/movies/sort-by?s=${sort}`
+      `${API_URL}/api/movies/sort-by?s=${sort}`
     );
     return response.data;
   } catch (error) {
@@ -34,7 +36,7 @@ export const fetchMoviesBySorting = async (sort) => {
 export const fetchMoviesByFilter = async (filter) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/movies/filter-by?f=${filter}`
+      `${API_URL}/api/movies/filter-by?f=${filter}`
     );
     return response.data;
   } catch (error) {
