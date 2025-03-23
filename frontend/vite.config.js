@@ -5,12 +5,9 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['dotenv'], 
     },
   },
-  server: {
-    proxy: {
-      "/api": "http://localhost:3000",
-    },
+  define: {
+    'process.env.API_URL': JSON.stringify(process.env.VITE_API_URL),
   },
 });
