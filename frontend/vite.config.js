@@ -8,6 +8,7 @@ export default defineConfig({
       external: ['dotenv'], 
     },
   },
+  base: "./",
   server: {
     proxy: {
       "/api": "https://mern-20xa.onrender.com",
