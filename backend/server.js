@@ -16,6 +16,10 @@ app.use(cors()); // to allow cross-origin requests
 app.use("/api/movies", movieRouter);
 app.use("/api/users", userRouter);
 
+app.get('/message', (req, res) => {
+  res.send('Hello, this is your message from the backend!');
+});
+
 app.listen(3000, () => {
   connectDb();
   console.log(`Server is running on http://localhost:${PORT}`);
