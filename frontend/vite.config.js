@@ -8,6 +8,7 @@ export default defineConfig({
       external: ['dotenv'], 
     },
   },
+  // Proxy /api requests to the backend
   base: "./",
   server: {
     proxy: {
