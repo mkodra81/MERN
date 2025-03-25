@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import SelectedMovie from "../components/SelectedMovie";
 import RelatedMovies from "../components/RelatedMovies";
 import Comments from "../components/Comments";
-import { fetchMoviesByFilter } from "../movies/movieStore.js";
+import { fetchMoviesByFilter } from "../scripts/movieStore.js";
 import "../styles/selected-movie.css";
 import WatchMovie from "../components/WatchMovie.jsx";
-import { useUserStore } from "../movies/userStore.js";
-import { useMovieStore } from "../movies/movieStore.js";
+import { useUserStore } from "../scripts/userStore.js";
+import { useMovieStore } from "../scripts/movieStore.js";
 
 const MovieDetails = () => {
   window.scrollTo(0, 0);

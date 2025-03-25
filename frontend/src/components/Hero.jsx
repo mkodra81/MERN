@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Container, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import { useMovieStore } from "../movies/movieStore.js";
+import { useMovieStore } from "../scripts/movieStore.js";
 
 const Hero = () => {
   const random = Math.floor(Math.random() * 10);

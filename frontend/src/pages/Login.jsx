@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useUserStore } from "../movies/userStore.js";
+import { useUserStore } from "../scripts/userStore.js";
 
 const Login = () => {
   const [email, setEmail] = useState("");

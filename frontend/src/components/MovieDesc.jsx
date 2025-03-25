@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
-import { useMovieStore } from "../movies/movieStore.js";
+import { useMovieStore } from "../scripts/movieStore.js";
 
 const MovieDesc = ({ movie }) => {
 
