@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useUserStore } from "../movies/userStore.js";
+import { useUserStore } from "../scripts/userStore.js";
 import "../styles/navbar.css";
 
 const Navigation = () => {

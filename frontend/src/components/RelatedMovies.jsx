@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard.jsx";
 import { Container, Row, Col } from "react-bootstrap";
-import { useMovieStore } from "../movies/movieStore.js";
+import { useMovieStore } from "../scripts/movieStore.js";
 
 const RelatedMovies = ({ suggestions, text }) => {
   const setSelectedMovie = useMovieStore((state) => state.setSelectedMovie);

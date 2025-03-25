@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container, Form, Button, ListGroup } from "react-bootstrap";
-import { useUserStore } from "../movies/userStore.js";
+import { useUserStore } from "../scripts/userStore.js";
 import "../styles/comments.css";
 
 const Comments = ({ movieId, user }) => {

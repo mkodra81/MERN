@@ -13,7 +13,7 @@ import Hero from "../components/Hero";
 import CategoryCard from "../components/CategoryCard";
 import MovieCarousel from "../components/MovieCarousel";
 import Loading from "./Loading";
-import { fetchMoviesBySorting, useMovieStore } from "../movies/movieStore.js";
+import { fetchMoviesBySorting, useMovieStore } from "../scripts/movieStore.js";
 import "../styles/home.css"
 
 const Home = () => {

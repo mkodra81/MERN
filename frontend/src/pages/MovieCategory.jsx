@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useMovieStore } from "../movies/movieStore.js";
-import { fetchMoviesByFilter } from "../movies/movieStore.js";
+import { useMovieStore } from "../scripts/movieStore.js";
+import { fetchMoviesByFilter } from "../scripts/movieStore.js";
 import RelatedMovies from "../components/RelatedMovies.jsx";
 
 const MovieCategory = () => {
