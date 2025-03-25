@@ -22,7 +22,7 @@ export const useUserStore = create((set) => ({
 
   createUser: async (user) => {
     try {
-      const response = await axios.post(`${API_BASE_URL}/register`, user);
+      const response = await axios.post(`${API_BASE_URL}/api/users/register`, user);
       return response.data;
     } catch (error) {
       console.error("Error creating user:", error);
@@ -32,7 +32,7 @@ export const useUserStore = create((set) => ({
 
   fetchUsers: async () => {
     try {
-      const response = await axios.get(API_BASE_URL);
+      const response = await axios.get(`${API_BASE_URL}/api/users`);
       set({ users: response.data });
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -43,7 +43,7 @@ export const useUserStore = create((set) => ({
   fetchComments: async (movieId) => {
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/comments?movieId=${movieId}`
+        `${API_BASE_URL}/api/users/comments?movieId=${movieId}`
       );
       set({
         comments: response.data,
@@ -56,7 +56,7 @@ export const useUserStore = create((set) => ({
 
   addComment: async (id, name, email, movieId, text) => {
     try {
-      const response = await axios.post(`${API_BASE_URL}/user/add-comment`, {
+      const response = await axios.post(`${API_BASE_URL}/api/users/user/add-comment`, {
         id,
         name,
         email,
@@ -77,7 +77,7 @@ export const useUserStore = create((set) => ({
   },
   deleteComment: async (id) => {
     try {
-      await axios.delete(`${API_BASE_URL}/user/delete-comment/${id}`);
+      await axios.delete(`${API_BASE_URL}/api/users/user/delete-comment/${id}`);
 
       set((state) => ({
         comments: state.comments.filter((comment) => comment._id !== id),
@@ -90,7 +90,7 @@ export const useUserStore = create((set) => ({
   updateComment: async (id, text) => {
     console.log(text);
     try {
-      const res = await axios.patch(`${API_BASE_URL}/user/edit-comment/${id}`, {
+      const res = await axios.patch(`${API_BASE_URL}/api/users/user/edit-comment/${id}`, {
         text,
       });
       console.log(res);
