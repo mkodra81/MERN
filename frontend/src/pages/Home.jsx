@@ -7,40 +7,35 @@ import {
   faRocket,
   faHeart,
   faGhost,
-  faDragon,
 } from "@fortawesome/free-solid-svg-icons";
 import Hero from "../components/Hero";
 import CategoryCard from "../components/CategoryCard";
 import MovieCarousel from "../components/MovieCarousel";
 import Loading from "./Loading";
 import { fetchMoviesBySorting, useMovieStore } from "../scripts/movieStore.js";
-import "../styles/home.css"
+import "../styles/home.css";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
-  
+
   const trendingMovies = useMovieStore((state) => state.trendingMovies);
   const newReleases = useMovieStore((state) => state.newReleases);
   const setTrendingMovies = useMovieStore((state) => state.setTrendingMovies);
   const setNewReleases = useMovieStore((state) => state.setNewReleases);
 
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "instant" });
-    }, 200);
-  }, []);
-
+  // Combine API calls for better performance
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true); // Set loading state to true before fetching
+      setLoading(true);
 
       try {
-        const trendingResponse = await fetchMoviesBySorting("imdb.rating");
-        const newReleasesResponse = await fetchMoviesBySorting("year");
+        const [trendingResponse, newReleasesResponse] = await Promise.all([
+          fetchMoviesBySorting("imdb.rating"),
+          fetchMoviesBySorting("year"),
+        ]);
 
         setTrendingMovies(trendingResponse);
         setNewReleases(newReleasesResponse);
-
       } catch (error) {
         console.error("Error fetching movies:", error);
       } finally {
@@ -49,6 +44,11 @@ const Home = () => {
     };
 
     fetchData();
+  }, [setTrendingMovies, setNewReleases]);
+
+  // Scroll to top instantly without delay
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
   const categories = [
@@ -82,7 +82,7 @@ const Home = () => {
       <section className="py-5 bg-light">
         <Container>
           <MovieCarousel title="Trending Now" movies={trendingMovies} />
-          <MovieCarousel title="New Releases" movies={newReleases}/>
+          <MovieCarousel title="New Releases" movies={newReleases} />
         </Container>
       </section>
     </div>
