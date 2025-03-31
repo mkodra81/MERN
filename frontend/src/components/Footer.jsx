@@ -7,6 +7,7 @@ import {
   faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 import "../styles/footer.css";
 
 const handleSubmit = (e) => {
@@ -25,18 +26,18 @@ const Footer = () => {
           <Col md={4}>
             <h5 className="mb-3">Quick Links</h5>
             <Nav className="flex-column">
-              <Nav.Link href="/about" className="text-white">
+              <Link href="/about" className="text-white">
                 About Us
-              </Nav.Link>
-              <Nav.Link href="/contact-us" className="text-white">
+              </Link>
+              <Link href="/contact-us" className="text-white">
                 Contact Us
-              </Nav.Link>
-              <Nav.Link href="/terms-of-service" className="text-white">
+              </Link>
+              <Link href="/terms-of-service" className="text-white">
                 Terms of Service
-              </Nav.Link>
-              <Nav.Link href="/privacy" className="text-white">
+              </Link>
+              <Link href="/privacy" className="text-white">
                 Privacy Policy
-              </Nav.Link>
+              </Link>
             </Nav>
           </Col>
           <Col md={4}>
