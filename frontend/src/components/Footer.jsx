@@ -16,27 +16,50 @@ const handleSubmit = (e) => {
   );
 };
 
+const handleNavItemClick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
 const Footer = () => {
   return (
-    <footer className="text-white py-4" style={{
-      backgroundColor: "#1a1a1a"
-    }}>
+    <footer
+      className="text-white py-4"
+      style={{
+        backgroundColor: "#1a1a1a",
+      }}
+    >
       <Container>
         <Row>
           <Col md={4}>
             <h5 className="mb-3">Quick Links</h5>
             <Nav className="flex-column">
-              <Link to="/about" className="text-white">
-                About Us
+              <Link
+                to="/privacy"
+                className="nav-link text-white"
+                onClick={handleNavItemClick}
+              >
+                Privacy
               </Link>
-              <Link to="/contact-us" className="text-white">
-                Contact Us
-              </Link>
-              <Link to="/terms-of-service" className="text-white">
+              <Link
+                to="/terms-of-service"
+                className="nav-link text-white"
+                onClick={handleNavItemClick}
+              >
                 Terms of Service
               </Link>
-              <Link to="/privacy" className="text-white">
-                Privacy Policy
+              <Link
+                to="/about"
+                className="nav-link text-white"
+                onClick={handleNavItemClick}
+              >
+                About Us
+              </Link>
+              <Link
+                to="/contact-us"
+                className="nav-link text-white"
+                onClick={handleNavItemClick}
+              >
+                Contact Us
               </Link>
             </Nav>
           </Col>
@@ -82,10 +105,7 @@ const Footer = () => {
                 className="form-control mb-2"
                 required
               />
-              <button
-                type="submit"
-                className="btn btn-primary w-100"
-              >
+              <button type="submit" className="btn btn-primary w-100">
                 Subscribe
               </button>
             </form>
