@@ -26,16 +26,16 @@ const Footer = () => {
           <Col md={4}>
             <h5 className="mb-3">Quick Links</h5>
             <Nav className="flex-column">
-              <Link href="/about" className="text-white">
+              <Link to="/about" className="text-white">
                 About Us
               </Link>
-              <Link href="/contact-us" className="text-white">
+              <Link to="/contact-us" className="text-white">
                 Contact Us
               </Link>
-              <Link href="/terms-of-service" className="text-white">
+              <Link to="/terms-of-service" className="text-white">
                 Terms of Service
               </Link>
-              <Link href="/privacy" className="text-white">
+              <Link to="/privacy" className="text-white">
                 Privacy Policy
               </Link>
             </Nav>
